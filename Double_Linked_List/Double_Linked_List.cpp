@@ -151,6 +151,25 @@ void DoubleLinkedList::hapus() {
         cout << "Record with roll number " << rollNo << " deleted" << endl;
 }
 
+void DoubleLinkedList::searchData() {
+    if (listEmpty() == true) {
+        cout << "\nList is Empty" << endl;
+    }
+
+    Node* prev, * curr;
+    prev = curr = NULL;
+    cout << "\nEnter The Roll Number of the Student whose Record you want to Search : ";
+    int num;
+    cin >> num;
+    if (DoubleLinkedList::search(num, &prev, &curr) == false)
+        cout << "\nRecord not found" << endl;
+    else {
+        cout << "\nRecord found" << endl;
+        cout << "\nRoll Number : " << curr->noMhs << endl;
+        cout << "\nName : " << curr->name << endl;
+    }
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
